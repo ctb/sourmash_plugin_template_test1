@@ -1,8 +1,4 @@
 "Read/write sketches via plugin."
-
-# TODO:
-# * add support for other moltypes
-
 import sourmash
 
 from sourmash.index import LinearIndex
@@ -44,7 +40,7 @@ class SaveSignatures_XYZ(Base_SaveSignaturesToLocation):
             return location.endswith('.xyz')
 
     def __repr__(self):
-        return f"SaveSignatures_AvroFile('{self.location}')"
+        return f"SaveSignatures_XYZ('{self.location}')"
 
     def open(self):
         pass
