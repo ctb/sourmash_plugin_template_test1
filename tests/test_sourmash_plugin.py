@@ -26,7 +26,7 @@ def test_sourmash_save(runtmp):
     sig47 = utils.get_test_data('47.fa.sig')
 
     # place output file in tmp directory
-    outfile = runtmp.output('new.sig')
+    outfile = runtmp.output('47.test1.sig')
 
     runtmp.sourmash('sig', 'cat', sig47, '-o', outfile)
     assert os.path.exists(outfile)
