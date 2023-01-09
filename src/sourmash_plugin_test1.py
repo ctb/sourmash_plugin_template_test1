@@ -57,3 +57,25 @@ class SaveSignatures_Test1(Base_SaveSignaturesToLocation):
     def add(self, ss):
         super().add(ss)
         self.keep.append(ss)
+
+#
+# CLI command - 'sourmash scripts xyz'
+#
+
+
+class ScriptsCommand_Test1:
+    command = "test1"
+    description = "do something test1"
+
+    def __init__(self, subparser):
+        "Initialize command. Use argparse 'add_argument' to add arguments."
+        # edit, add, remove these as you need!
+        subparser.add_argument("filename_test", help="input file")
+        subparser.add_argument("-x", "--xyz", action="store_true",
+                               help="boolean flag to turn on behavior.")
+
+    def main(self, args):
+        "The actual code to do something."
+        notify("RUNNING command {self.command}")
+        notify("received argument: '{args.filename_xyz}'")
+        notify("flag xyz value: {args.xyz}")

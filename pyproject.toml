@@ -19,3 +19,6 @@ test1_reader = "sourmash_plugin_test1:load_sketches"
 
 [project.entry-points."sourmash.save_to"]
 test1_writer = "sourmash_plugin_test1:SaveSignatures_Test1"
+
+[project.entry-points."sourmash.cli_script"]
+test1_cmd = "sourmash_plugin_test1:ScriptsCommand_Test1"
