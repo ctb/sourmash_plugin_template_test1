@@ -2,7 +2,7 @@
 import sourmash
 
 from sourmash.index import LinearIndex
-from sourmash.logging import debug_literal
+from sourmash.logging import debug_literal, notify
 
 from sourmash.save_load import (Base_SaveSignaturesToLocation,
                                 _get_signatures_from_rust)
@@ -52,3 +52,25 @@ class SaveSignatures_XYZ(Base_SaveSignaturesToLocation):
     def add(self, ss):
         super().add(ss)
         self.keep.append(ss)
+
+#
+# CLI command - 'sourmash scripts xyz'
+#
+
+
+class ScriptsCommand_XYZ:
+    command = "xyz"
+    description = "do something xyz"
+
+    def __init__(self, subparser):
+        "Initialize command. Use argparse 'add_argument' to add arguments."
+        # edit, add, remove these as you need!
+        subparser.add_argument("filename_xyz", help="input file")
+        subparser.add_argument("-x", "--xyz", action="store_true",
+                               help="boolean flag to turn on behavior.")
+
+    def main(self, args):
+        "The actual code to do something."
+        notify(RUNNING command {self.command}')
+        notify("received argument: '{args.filename_xyz}'"
+        notify("flag xyz value: {args.xyz}")

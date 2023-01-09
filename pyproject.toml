@@ -19,3 +19,6 @@ xyz_reader = "sourmash_plugin_xyz:load_sketches"
 
 [project.entry-points."sourmash.save_to"]
 xyz_writer = "sourmash_plugin_xyz:SaveSignatures_XYZ"
+
+[project.entry-points."sourmash.cli_script"]
+xyz_cmd = "sourmash_plugin_xyz:Scriptscommand_XYZ"
