@@ -71,6 +71,6 @@ class ScriptsCommand_XYZ:
 
     def main(self, args):
         "The actual code to do something."
-        notify(RUNNING command {self.command}')
-        notify("received argument: '{args.filename_xyz}'"
+        notify("RUNNING command {self.command}')
+        notify("received argument: '{args.filename_xyz}'")
         notify("flag xyz value: {args.xyz}")
