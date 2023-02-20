@@ -2,7 +2,7 @@
 import sourmash
 
 from sourmash.index import LinearIndex
-from sourmash.logging import debug_literal
+from sourmash.logging import debug_literal, notify
 from sourmash.plugins import CommandLinePlugin
 
 from sourmash.save_load import (Base_SaveSignaturesToLocation,
@@ -68,15 +68,15 @@ class Command_Test1(CommandLinePlugin):
     description = "does a thing"
 
     def __init__(self, subparser):
-        super().__init__(p)
+        super().__init__(subparser)
         # add argparse arguments here.
         debug_literal('RUNNING cmd_xyz.__init__')
         subparser.add_argument("filename_test", help="input file")
-        subparser.add_argument("-x", "--xyz", action="store_true",
+        subparser.add_argument("-x", "--xyz", action="store_true")
 
     def main(self, args):
         # code that we actually run.
         super().main(args)
-        notify("RUNNING command {self.command}")
-        notify("received argument: '{args.filename_test}'")
-        notify("flag xyz value: {args.xyz}")
+        notify(f"RUNNING command {self.command}")
+        notify(f"received argument: '{args.filename_test}'")
+        notify(f"flag xyz value: {args.xyz}")
