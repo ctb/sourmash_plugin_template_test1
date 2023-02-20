@@ -63,7 +63,7 @@ class Command_XYZ(CommandLinePlugin):
     description = "does a thing"
 
     def __init__(self, subparser):
-        super().__init__(p)
+        super().__init__(subparser)
         # add argparse arguments here.
         debug_literal('RUNNING cmd_xyz.__init__')
 
